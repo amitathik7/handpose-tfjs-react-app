@@ -6,8 +6,15 @@ import Webcam from "react-webcam";
 import "./App.css";
 
 function App() {
-  const webcamRef = useRef(null);
-  const canvasRef = useRef(null);
+	const webcamRef = useRef(null);
+	const canvasRef = useRef(null);
+
+	const runHandpose = async () => {
+		const net = await handpose.load();
+		console.log("Handpose model loaded.");
+	};
+
+	runHandpose();
 
 	return (
 		<div className="App">
